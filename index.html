@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css练习2</title>
+  <style>
+     /*基本重置样式*/
+     body{margin:0;font:12px/1 "微软雅黑";background-color: pink;}
+      h1,h2,h3,h4,h5,h6{margin:0;font-weight:normal;font-size:100%;}
+      p,dl,dd{margin:0;}
+      ul,ol{margin:0;padding:0;list-style:none;}
+      a{text-decoration:none;color:#333;}
+      strong,b{font-weight:normal;}
+      em,i{font-style:normal;}
+      img{border:0;vertical-align:bottom;}
+    .clearfix:after {content:"";display:block;clear: both;}
+
+
+    .l-container{
+      width: 300px;
+      margin: 0 auto;
+      margin-top: 100px;
+    }
+    .l-container div:target{
+      background-color: yellow;
+    }
+    .redbao{
+      position: relative;
+      height: 450px;
+      border-radius: 7px;
+      background-color: #a5433a;
+    }
+    .redbao-cover{
+      height: 282px;
+      background-color: #bd503b;
+      border-radius: 7px 7px 150px 150px / 7px 7px 40px 40px;
+      text-align: center;
+      color: #fff;
+      /* border-bottom-right-radius:150px 40px;
+      border-bottom-left-radius:150px 40px; */
+    }
+    .redbao-cover img{
+      margin: 20px 0 9px 0;
+      border-radius: 50%;
+    }
+    .redbao-cover h3 {
+      line-height: 39px;
+      font-size: 23px;
+    }
+    .redbao-cover h4 {
+      line-height: 31px;
+      font-size: 14px;
+      color: #ebafa7;
+    }
+    .redbao-cover p {
+      font-size: 17px;
+      line-height: 29px;
+    }
+    .chai{
+      position: absolute;
+      top: 232px;
+      left: 50%;
+      margin-left: -50px;
+    }
+    .chai label {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      border-radius: 50px;
+      background-color: #ffa73b;
+      text-align: center;
+      font-size: 16px;
+      color: #1f0100;
+      cursor: pointer;
+    }
+    #open{
+      display: none;
+    }
+    #open:checked + div {
+      border-radius: 150px 150px 7px 7px / 40px 40px 7px 7px;
+    }
+    #open:checked + div .redbao-cover{
+      height: 225px;
+      border-radius: 150px 150px 150px 150px / 40px 40px 40px 40px;
+      background-color: #fff;
+    }
+    #open:checked + div .redbao-cover > *{
+      display: none;
+    }
+    .money{
+      display: none;
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      margin-left: -150px;
+    }
+    .money h1{
+      position: absolute;
+      z-index: 99;
+      left: 25%;
+      top: 25%;
+      font-size: 50px;
+      color: rgb(255, 230, 0);
+    }
+    .money img {
+      animation: openBao 1s linear forwards;
+      width: 300px;
+      width: 300px;
+    }
+    @keyframes openBao{
+      0%{
+        transform: scale(0) rotate(-1080deg);
+      }
+      100%{
+        transform: scale(1) rotate(0deg);
+      }
+    }
+    #open:checked + div + .money {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="l-container">
+    <input type="checkbox" name="redbao" id="open">
+    <div class="redbao" >
+      <div class="redbao-cover">
+        <img src="./images/avatar.png" alt="">
+        <h3>翁世杰</h3>
+        <h4>给您发了一个红包</h4>
+        <p>恭喜发财 大吉大利</p>
+      </div>
+      <div class="chai">
+        <label for="open">拆红包</a>
+      </div>
+    </div>
+    <div class="money">
+      <h1>要开心鸭！！！~~~~~~~</h1>
+      <img src="./images/timg.jpg" alt="money">
+    </div>
+  </div>
+</body>
+
+</html>
